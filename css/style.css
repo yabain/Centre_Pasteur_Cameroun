@@ -497,4 +497,15 @@
     top: 0; /* Position the navbar at the top of the page */
     z-index: 5;
   }
-  
+
+
+.carousel-text {
+    font-size: 50px;
+}
+
+
+@media (max-width: 500px) {
+    .carousel-text {
+        font-size: 30px;
+    }
+}
