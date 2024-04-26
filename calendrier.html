@@ -56,7 +56,89 @@
     <meta property="twitter:description"
         content="Le Centre Pasteur du Cameroun est un organisme technique du Ministère de la Santé Publique du Cameroun." />
     <meta property="twitter:image" content="/img/icons/icon_cpc_dark.png" />
+    <style>
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
 
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -119,13 +201,13 @@
                                     <a href="index.html" class="nav-link">LE CENTRE</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a href="analyse.html" class="nav-link active">ANALYSE</a>
+                                    <a href="analyse.html" class="nav-link">ANALYSE</a>
                                 </div>
                                 <div class="nav-item">
                                     <a href="sante.html" class="nav-link">SANTE PUBLIQUE</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a href="vaccination.html" class="nav-link">VACCINATIONS</a>
+                                    <a href="vaccination.html" class="nav-link active">VACCINATIONS</a>
                                 </div>
                                 <div class="nav-item">
                                     <a href="recherche.html" class="nav-link">RECHERCHE</a>
@@ -150,11 +232,12 @@
         <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/imgs/caroussel1.png);">
             <div class="container-fluid page-header-inner py-5">
                 <div class="container text-center pb-5">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Les services d'analyse</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Calendrier de vaccination</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Analyse</li>
+                            <li class="breadcrumb-item"><a href="vaccination.html">Vaccination</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Calendrier</li>
                         </ol>
                     </nav>
                 </div>
@@ -167,211 +250,193 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase"> - </h6>
-                    <h1 class="mb-5">Présentation<span class="text-primary text-uppercase"></span></h1>
+                    <h1 class="mb-5"> Calendrier de vaccination <span class="text-primary text-uppercase"></span></h1>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="img/imgs/CPC-056.jpg" alt="">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="section-title text-center text-primary text-uppercase"> Calendrier de vaccination des
+                            enfants de 0 à 11 mois </h6>
                     </div>
-                    <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
 
                         <div class="">
-                            <h6 class="section-title text-start text-dark text-uppercase mb-3"></h6>
-                            <!-- <h1 class="text-dark mb-4">....</h1> -->
-                            <p class="text-dark mb-4" style="text-align: justify;">
-                                Il est laboratoire national de référence pour 28 pathologies. Un service Hygiène et
-                                Environnement propose le contrôle microbiologique et physico-chimique des eaux et des
-                                aliments pour les industries, l’hôtellerie et la restauration, les administrations,
-                                diverses institutions et les particuliers.
-                            </p>
+                            <table>
+                                <thead>
+                                    <tr style="font-size: large;">
+                                        <th scope="col"><b> Age recommandé</b></th>
+                                        <th scope="col"><b> Contact</b></th>
+                                        <th scope="col"><b>Vaccins</b></th>
+                                        <th scope="col"><b>Voie d’administration</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Age recommandé">A la naissance</td>
+                                        <td data-label="Contact"> 1er contact</td>
+                                        <td data-label="Vaccins"> BCG <br>
+                                            · VPO - 0</td>
+                                        <td data-label="Voie d’administration"> Intradermique <br>
+                                            Orale</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="Age recommandé">A 1 mois ½ ou 6 semaines</td>
+                                        <td data-label="Contact"> 2ème contact</td>
+                                        <td data-label="Vaccins"> DTC – HepB + Hib 1
+                                            Pneumo 13-1
+                                            · VPO-1
+                                            · Rota1</td>
+                                        <td data-label="Voie d’administration">Intramusculaire <br>
+                                            Orale</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="Age recommandé"> A 2 mois ½ ou 10 semaines</td>
+                                        <td data-label="Contact"> 3ème contact</td>
+                                        <td data-label="Vaccins"> DTC-HepB2 + Hib2
+                                            Pneumo 13 -2
+                                            · VPO-2
+                                            · Rota2</td>
+                                        <td data-label="Voie d’administration"> Intramusculaire <br>
+                                            Orale</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="Age recommandé">A 3 mois ½ ou 14 semaines</td>
+                                        <td data-label="Contact"> 4ème contact</td>
+                                        <td data-label="Vaccins"> DTC-HepB2 + Hib3
+                                            Pneumo 13 -3
+                                            · VPO-3</td>
+                                        <td data-label="Voie d’administration"> Intramusculaire <br>
+                                            Orale</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="Age recommandé"> A 9 mois</td>
+                                        <td data-label="Contact"> 5ème contact</td>
+                                        <td data-label="Vaccins"> VIT A (dès 6 mois, une fois tous les six mois)
+                                            VAR
+                                            VAA
+                                        </td>
+                                        <td data-label="Voie d’administration"> Orale <br>
+                                            Sous-cutanée <br>
+                                            Sous-cutanée</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                    <!-- <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    </div> -->
                 </div>
-            </div>
-        </div>
-
-        <!-- Room Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase"></h6>
-                    <h1 class="mb-5">Analyses des Eaux et des Aliments</h1>
-                </div>
+                <br>
+                <br>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/service_hygiène.jpg" alt="">
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Service Hygiène et Environnement</h5>
-                                </div>
-                                <p class="text-body mb-3">Détection des Liégionelles dans les tours aéro-réfrégirantes
-                                    des établissements publiques.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">EN SAVOIR PLUS</a>
-                                </div>
-                            </div>
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="section-title text-center text-primary text-uppercase"> Tableau des maladies cibles
+                            du PEV </h6>
+                    </div>
+                    <div class="col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+
+                        <div class="">
+                            <table>
+                                <thead>
+                                    <tr style="font-size: large;">
+                                        <th scope="col"><b> VACCIN</b></th>
+                                        <th scope="col"><b> MALADIE CIBLE</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="VACCIN"> BCG :Bacille de Calmette et Guérin</td>
+                                        <td data-label="MALADIE CIBLE"> Tuberculose</td>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN"> VPO :Vaccin Polio Oral</td>
+                                        <td data-label="MALADIE CIBLE"> Poliomyélite</td>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN"> DTC :Diphtérie – Tétanos – Coqueluche</td>
+                                        <td data-label="MALADIE CIBLE"> Diphtérie, Tétanos, Coqueluche</td>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN"> Hep B :Hépatite virale B</td>
+                                        <td data-label="MALADIE CIBLE"> Hépatite virale B</td>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN">  VAR : Vaccin Anti-Rougeoleux</td>
+                                        <td data-label="MALADIE CIBLE"> Rougeole</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN">  VAA : Vaccin Anti-Amaril</td>
+                                        <td data-label="MALADIE CIBLE">  Fièvre Jaune</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN"> Hib</td>
+                                        <td data-label="MALADIE CIBLE">  Infection à HaemophilusInfluenzae type b</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN">  Pneumo 13 : Pneumocoque</td>
+                                        <td data-label="MALADIE CIBLE">  Infections à pneumocoque (méningite, pneumonie, otite, sinusite et bronchite)</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN">  Rotarix :</td>
+                                        <td data-label="MALADIE CIBLE">  Diarrhée à rotavirus</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCIN">  Vit A : Vitamine A</td>
+                                        <td data-label="MALADIE CIBLE">  Maladie infectieuse en général, Cécité en particulier</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/physico-chimie.jpg" alt="">
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Section Physico-chimie</h5>
-                                </div>
-                                <p class="text-body mb-3">Les services du SHEpc sont sollicités par de nombreuses
-                                    industries agroalimentaires ou non, des entreprises de traitement et/ou de
-                                    production d’eaux de consommation.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">EN SAVOIR PLUS</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/microbiologie.jpg" alt="">
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Section microbiologie</h5>
-                                </div>
-                                <p class="text-body mb-3">Le Laboratoire d'Hygiène et Environnement du CPC est l'unique
-                                    laboratoire accrédité selon la norme NF EN ISO 17025 la microbiologie des eaux et
-                                    des aliments en Afrique Centrale.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">EN SAVOIR PLUS</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    </div> -->
                 </div>
-            </div>
-        </div>
-        <!-- Room End -->
-        <!-- Room Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase"></h6>
-                    <h1 class="mb-5">Analyses médicales</h1>
-                </div>
+                <br>
+                <br>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/modalitesPratiques.png" alt="">
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Modalités Pratiques</h5>
-                                </div>
-                                <p class="text-body mb-3">Afin de gérer au mieux la prise en charge administrative de
-                                    votre dossier, vous serez muni de certain éléments à votre arrivée au laboratoire.
-                                </p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">EN SAVOIR PLUS</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="section-title text-center text-primary text-uppercase">
+                            Calendrier de vaccination de la femme enceinte </h6>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/services_express.png" alt="">
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Service Express</h5>
-                                </div>
-                                <p class="text-body mb-3">Vous avez besoin de faire vos analyses et vos vaccinations
-                                    sans attendre ? Demandez ou prenez rendez-vous au Secrétariat Médical du Centre
-                                    Pasteur du Cameroun.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">EN SAVOIR PLUS</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/qualityAssurance.jpg" alt="">
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Assurance qualité </h5>
-                                </div>
-                                <p class="text-body mb-3">Le laboratoire d’Analyses Médicales (LAM) du CPC est arrimé au
-                                    système de management par la qualité. Il est accrédité depuis 2019 selon la norme
-                                    internationale ISO 15189.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">EN SAVOIR PLUS</a>
-                                </div>
-                            </div>
+                    <div class="col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+
+                        <div class="">
+                            <table>
+                                <thead>
+                                    <tr style="font-size: large;">
+                                        <th scope="col"><b> VACCINS</b></th>
+                                        <th scope="col"><b> DATE D’ADMINISTRATION</b></th>
+                                        <th scope="col"><b> DUREE DE PROTECTION</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row" data-label="VACCINS">  VAT 1</td>
+                                        <td data-label=" DATE D’ADMINISTRATION"> Dès le début de la grossesse</td>
+                                        <td data-label=" DUREE DE PROTECTION"> Aucune protection</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCINS"> VAT 2</td>
+                                        <td data-label=" DATE D’ADMINISTRATION"> 1 mois au moins après VAT 1</td>
+                                        <td data-label=" DUREE DE PROTECTION"> 3 ans</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCINS">  VAT 3</td>
+                                        <td data-label=" DATE D’ADMINISTRATION">six mois après VAT2</td>
+                                        <td data-label=" DUREE DE PROTECTION"> 5 ans</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCINS">VAT 4</td>
+                                        <td data-label=" DATE D’ADMINISTRATION">1 an après VAT3</td>
+                                        <td data-label=" DUREE DE PROTECTION"> 10 ans</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" data-label="VACCINS">VAT 5</td>
+                                        <td data-label=" DATE D’ADMINISTRATION"> 1 an après VAT4</td>
+                                        <td data-label=" DUREE DE PROTECTION"> Toute la vie</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Room End -->
-
-
-        <!-- Testimonial Start -->
-        <!-- <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s"
-            style="margin-bottom: 90px;">
-            <div class="container">
-                <div class="owl-carousel testimonial-carousel py-5">
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet
-                            diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-1.jpg"
-                                style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet
-                            diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg"
-                                style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet
-                            diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg"
-                                style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Testimonial End -->
-
 
         <!-- Newsletter Start -->
         <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
